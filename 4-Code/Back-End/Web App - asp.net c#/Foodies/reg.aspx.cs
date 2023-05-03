@@ -34,7 +34,7 @@ namespace Foodies
                 myconnection.Open();
 
                 // first command to show employee table
-                string insertCommand = "insert into customer (email , phone , password) values(@email,@username,@phone,@password)";
+                string insertCommand = "insert into customer (email , username, phone , password) values(@email,@username,@phone,@password)";
                 SqlCommand insertNewCustomerCommand = new SqlCommand(insertCommand, myconnection);
                 insertNewCustomerCommand.Parameters.AddWithValue("@email", email);
                 insertNewCustomerCommand.Parameters.AddWithValue("@username", username);
@@ -42,7 +42,7 @@ namespace Foodies
                 insertNewCustomerCommand.Parameters.AddWithValue("@password", password);
                 insertNewCustomerCommand.ExecuteNonQuery();
 
-                Response.Redirect("homepage.html");
+                Response.Redirect("homepage.aspx?email=" + email);
             }
             
         }
@@ -74,16 +74,23 @@ namespace Foodies
                 }               
             }
 
-            if (!string.IsNullOrEmpty(username) && isUnique)
+            if (!string.IsNullOrEmpty(username.Trim()) && isUnique)
+            {
                 return true;
-            else
+            }           
+            else if (!isUnique)
             {
                 Response.Write("<script>alert('The username is not unique');</script>");
                 return false;                
             }
+            else
+            {
+                Response.Write("<script>alert('The username is not valid');</script>");
+                return false;
+            }
         }
 
-        public bool IsValidEmailAddress(string email)  // Need test to check *****
+        public bool IsValidEmailAddress(string email)  
         {
             bool isUnique = true;
 
@@ -106,27 +113,85 @@ namespace Foodies
                 }
             }
 
-             if (!string.IsNullOrEmpty(email) && new EmailAddressAttribute().IsValid(email) && isUnique)
-                 return true;
+             if (!string.IsNullOrEmpty(email.Trim()) && new EmailAddressAttribute().IsValid(email) && isUnique)
+            {
+                return true;
+            }
+             else if(!new EmailAddressAttribute().IsValid(email))
+            {
+                Response.Write("<script>alert('The Email is not in the right format');</script>");
+                return false;
+            }
+             else if(!isUnique)
+            {
+                Response.Write("<script>alert('The Email is not unique');</script>");
+                return false;
+            }                 
              else
-                 return false;
+            {
+                Response.Write("<script>alert('The Email is not valid');</script>");
+                return false;
+            }
+                 
             
         }
 
         public bool IsValidPhone(string phone)
         {
-            if (!string.IsNullOrEmpty(phone) && Regex.Match(phone, "^[0-9]*$").Success)
+            if (!string.IsNullOrEmpty(phone) && Regex.Match(phone, "^[0-9]*$").Success && phone.Length == 10)
+            {
                 return true;
-            else
+            }               
+            else if (!Regex.Match(phone, "^[0-9]*$").Success)
+            {
+                Response.Write("<script>alert('The phone format is not valid');</script>");
                 return false;
+            }
+            else if(phone.Length != 10)
+            {
+                Response.Write("<script>alert('The phone must be 10 digits only');</script>");
+                return false;
+            }
+            else
+            {
+                Response.Write("<script>alert('The phone is not valid');</script>");
+                return false;
+            }
+                
         }
 
         public bool IsValidPassword(string password , string confirmPassword)
         {
             if (!string.IsNullOrEmpty(password) && Regex.Match(password, "^(?=.*\\d).+$").Success && Regex.Match(password, "^(?=.*[A-Z]).+$").Success && Regex.Match(password, "(?=.*[!@#$%^&*]).+$").Success && password.Length >= 8 && password.Equals(confirmPassword))
+            {
                 return true;
-            else
+            }
+            else if (password.Length < 8)
+            {
+                Response.Write("<script>alert('The Password must be 8 characters at least');</script>");
                 return false;
+            }
+            else if (!Regex.Match(password, "^(?=.*[A-Z]).+$").Success)
+            {
+                Response.Write("<script>alert('The Password must contain Uppercase letter');</script>");
+                return false;
+            }
+            else if (!Regex.Match(password, "(?=.*[!@#$%^&*]).+$").Success)
+            {
+                Response.Write("<script>alert('The Password must contain special character');</script>");
+                return false;
+            }
+            else if (!password.Equals(confirmPassword))
+            {
+                Response.Write("<script>alert('The Passwords are not matched');</script>");
+                return false;
+            }
+            else
+            {
+                Response.Write("<script>alert('The Password is not valid');</script>");
+                return false;
+            }
+
         }
 
 
