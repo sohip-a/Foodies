@@ -70,7 +70,6 @@
       <div class="navbar-icons">
         <li><a href="homepage.aspx">Home</a></li>
         <li><a href="Myaccount.aspx">My Account</a></li>
-        <li><a href="loyaltypoints.aspx">Loyalty Points</a></li>
         <li><a href="login.aspx">Logout</a></li>
 
       </div>

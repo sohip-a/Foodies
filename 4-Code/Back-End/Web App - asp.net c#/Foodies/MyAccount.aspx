@@ -82,7 +82,6 @@
 	<nav>
 		<ul>
 			<li><a runat="server" onserverclick="homeNavClick">Home</a></li>
-			<li><a runat="server" onserverclick="loyaltyNavClick">Loyalty Points</a></li>
 			<li><a href="login.aspx">Logout</a></li>
 		</ul>
 	</nav>

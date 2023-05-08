@@ -38,7 +38,6 @@
                         <div class="navbar-nav mx-auto">
                             <a class="nav-link active mx-3" aria-current="page" href="homepage.aspx">Home</a>
                             <a class="nav-link mx-3" runat="server" onserverclick="myAccClick">My Account</a>
-                            <a class="nav-link mx-3" runat="server" onserverclick="loyaltyClick">loyalty points</a>
                             <a class="nav-link mx-3" href="login.aspx">Logout</a>
 
                         </div>
