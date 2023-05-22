@@ -73,7 +73,7 @@ namespace Foodies
             if (!selectedNeighborhood.Equals("Select your neighborhood"))
             {
                 string loggedEmail = Request.QueryString["email"];
-                Response.Redirect("ResturantMenupage.html?email=" + loggedEmail);
+                Response.Redirect("ResturantMenupage.aspx?email=" + loggedEmail);
             }
             else
             {
@@ -97,21 +97,6 @@ namespace Foodies
             {
                 Response.Redirect("MyAccount.aspx?email=" + loggedEmail);
             }          
-        }
-
-        protected void loyaltyClick(object sender, EventArgs e)
-        {
-            string loggedEmail = Request.QueryString["email"];
-
-            if (String.IsNullOrEmpty(loggedEmail)) //admin tries to go to my account page
-            {
-                Response.Write("<script>alert('Avaiable only to customers to check their loyalty points');</script>");
-            }
-            else
-            {
-                Response.Redirect("loyaltyPointsPage.aspx?email=" + loggedEmail);
-            }
-
         }
 
 

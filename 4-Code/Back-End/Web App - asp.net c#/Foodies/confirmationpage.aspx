@@ -226,7 +226,6 @@ h1 {
       <ul>
         <li><a href="homepage.aspx">Home</a></li>
         <li><a href="Myaccount.aspx">My Account</a></li>
-        <li><a href="loyaltypoints.aspx">Loyalty Points</a></li>
         <li><a href="login.aspx">Logout</a></li>
       </ul>
     </nav>
@@ -249,11 +248,7 @@ h1 {
     <label for="address-textbox">Address:</label>
     <input type="text" id="address-textbox" placeholder="Enter your address">
   </div>
-  <div class="loyalty-points">
-    <input type="checkbox" id="use-loyalty-points" disabled>
-    <label for="use-loyalty-points">Use loyalty points</label>
-    <p><span id="loyalty-points-amount">0</span> points available</p>
-  </div>
+
   <button id="confirm-order-button" disabled>Confirm Order</button>
   <script src="./assets/js/js.js"></script>
 </body>

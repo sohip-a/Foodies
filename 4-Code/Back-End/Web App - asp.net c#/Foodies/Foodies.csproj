@@ -116,7 +116,6 @@
     <Content Include="DeleteResturant.aspx" />
     <Content Include="DeleteUser.aspx" />
     <Content Include="FAQ.aspx" />
-    <Content Include="loyaltyPointsPage.aspx" />
     <Content Include="forgotpassword.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="login.aspx" />
@@ -240,13 +239,6 @@
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="loyaltyPointsPage.aspx.cs">
-      <DependentUpon>loyaltyPointsPage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="loyaltyPointsPage.aspx.designer.cs">
-      <DependentUpon>loyaltyPointsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="MyAccount.aspx.cs">
       <DependentUpon>MyAccount.aspx</DependentUpon>

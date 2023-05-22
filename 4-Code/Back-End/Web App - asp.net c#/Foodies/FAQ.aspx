@@ -59,7 +59,6 @@
     <div>
       <a href="homepage.aspx">Home</a>
       <a href="MyAccount.aspx">My Account</a>
-      <a href="loyaltypoints.aspx">Loyalty Points</a>
       <a href="login.aspx">Logout</a>
     </div>
   </nav>

@@ -1,0 +1,87 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ThankYou!.aspx.cs" Inherits="Foodies.ThankYou_" %>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Thank You!</title>
+    <style>
+      /* Navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F5F5F5;
+        height: 60px;
+        padding: 0 20px;
+      }
+      .navbar a {
+        text-decoration: none;
+        color: #333;
+        font-size: 18px;
+        margin: 0 10px;
+      }
+      .navbar a:hover {
+        color: #666;
+      }
+      .navbar-logo {
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .navbar-icons {
+        display: flex;
+        align-items: center;
+      }
+      .navbar-icons a {
+        margin: 0 10px;
+      }
+      
+      /* Thank you message */
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        text-align: center;
+      }
+      h1 {
+        font-size: 40px;
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 20px;
+        margin-bottom: 40px;
+      }
+      .btn {
+        padding: 12px 24px;
+        background-color: #007AFF;
+        color: #FFF;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        transition: background-color 0.2s ease-in-out;
+      }
+      .btn:hover {
+        background-color: #0062cc;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <a href="#">Logo</a>
+      <div class="navbar-icons">
+        <li><a href="homepage.aspx">Home</a></li>
+        <li><a href="Myaccount.aspx">My Account</a></li>
+        <li><a href="loyaltypoints.aspx">Loyalty Points</a></li>
+        <li><a href="login.aspx">Logout</a></li>
+
+      </div>
+    </nav>
+    
+    <!-- Thank you message -->
+    <div class="container">
+      <h1>Thank You!</h1>
+      <p>Your order has been submitted and will be prepared now and delivered within the next hour.</p>
+      <a href="homepage.aspx" class="btn">Back to Home</a>
+    </div>
+  </body>
+</html>
+

@@ -131,12 +131,6 @@ namespace Foodies
             Response.Redirect("homepage.aspx?email=" + loggedEmail);
         }
 
-        protected void loyaltyNavClick(object sender, EventArgs e)
-        {
-            string loggedEmail = Request.QueryString["email"];
-            Response.Redirect("loyaltyPointsPage.aspx?email=" + loggedEmail);
-        }
-
 
 
 
